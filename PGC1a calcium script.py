@@ -27,9 +27,8 @@ tau = np.array(tau, dtype = float)
 u = [1]*a
 z = [1]*a
 uR = [0]*a
-print(np.amax(F[1]))
 
- #find maximum and position of the maximum
+#find maximum and position of the maximum
 for x in range (0, a):
     #print(x)
     z[x] = np.amax(F[x])
@@ -65,7 +64,7 @@ for x in range (0, a):
        # and (((F[x,j]-pik[x,j])/pik[x,j])>0.1)):
             pik[x,j] = F[x,j]
            
-          #  tau[x,0]=tau[x,0]+1
+          # tau[x,0]=tau[x,0]+1
         else:
             pik[x,j] = 0
 
@@ -98,18 +97,7 @@ for x in range (0,a):
                     z=1
                     n=n+1
                     break
-#for x in range (0,a):
-#    for j in range (7, b-7):
- #       if pik[x,j] !=0:
- #           for g in range (j+1, b-3):
- #               if ((F[x,g] > (0.75*F[x,j])) and (pik[x,g] == 0)) :
-  #                  z=z+1
-  #              else:
-   #                 pik1[x,j]=z
-    #                z=1
-    #                n=n+1
-     #               break
-#count picks from z to n slides
+# z, n - parameters to define of the part of the ca trace for the analysis
 z=800
 n=1800
 for x in range (0,a):
@@ -138,10 +126,8 @@ for x in range (0,a):
     for j in range (z, n):
         if pik1[x,j] != 0:
            tau[x,4]=tau[x,4]+bl[x,j]
-#real tau
-#to plot few curves        
-#for g in range (10,11):
- #   plt.plot(F[g])
+
+# visual control, parameters need to be adjusted
 k=0
 plt.xlim(1000,3000)
 plt.plot(pik[1], 'bo')
